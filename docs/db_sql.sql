@@ -7,7 +7,7 @@ CREATE TABLE alunos (
     emailAluno VARCHAR(128) NOT NULL,
     matricula VARCHAR(10) NOT NULL,
     curso VARCHAR(50) NOT NULL,
-    mediaFinal DECIMAL(2,2) NOT NULL
+    mediaFinal DECIMAL(3,2) NOT NULL
 );
 
 CREATE TABLE professores (
