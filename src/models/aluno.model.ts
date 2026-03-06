@@ -59,14 +59,14 @@ export class Aluno extends Pessoa {
     this._mediaFinal = value;
   }
 
-  mostrarDados(): string {
+  public mostrarDados(): string {
     //temp mostrarDados
-    return this._nome;
+    return `"Nome": ${this.Nome}, "E-mail": ${this.Email}, "Matrícula": ${this.Matricula}, "Curso": ${this.Curso}, "Média Final": ${this.MediaFinal}`;
   }
 
-  estaAprovado(value: number):boolean {
-    if(value >= 7) {
-        return true;
+  estaAprovado(value: number): boolean {
+    if (value >= 7) {
+      return true;
     }
     return false;
   }
@@ -89,7 +89,7 @@ export class Aluno extends Pessoa {
     matricula: string,
     curso: string,
     mediaFinal: number,
-    id: number
+    id: number,
   ): Aluno {
     return new Aluno(nome, email, matricula, curso, mediaFinal, id);
   }
@@ -117,15 +117,12 @@ export class Aluno extends Pessoa {
       throw new Error("A média deve ser um número.");
     }
 
-
-    if(value < 0) {
-        throw new Error("A média não pode ser negativa.");
+    if (value < 0) {
+      throw new Error("A média não pode ser negativa.");
     }
 
-    if(value > 10) {
-        throw new Error("A média não pode maior que 10.");
+    if (value > 10) {
+      throw new Error("A média não pode maior que 10.");
     }
   }
-
-  
 }

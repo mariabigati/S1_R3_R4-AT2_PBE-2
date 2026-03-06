@@ -1,3 +1,5 @@
+import { JsonWebKeyInput } from "node:crypto";
+
 export interface IPessoa {
   mostrarDados(): string;
 }
@@ -55,5 +57,10 @@ export abstract class Pessoa implements IPessoa {
     }
   }
 
-  abstract mostrarDados(): string;
+  public mostrarDados(): string {
+   return `{ 
+        nome: ${this.Nome}, 
+        email: ${this.Email} 
+    }`;
+  };
 }

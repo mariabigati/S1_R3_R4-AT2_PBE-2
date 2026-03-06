@@ -47,9 +47,9 @@ export class Professor extends Pessoa {
     this._cargaHoraria = value;
   }
 
-  mostrarDados(): string {
+  public mostrarDados(): string {
     //temp mostrarDados
-    return this._nome;
+    return `"Nome": ${this.Nome}, "E-mail": ${this.Email}, "Disciplina": ${this.Disciplina}, "Carga Horária": ${this.CargaHoraria}`;
   }
 
   //insert e update
