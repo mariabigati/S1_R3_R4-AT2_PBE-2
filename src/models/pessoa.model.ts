@@ -8,7 +8,7 @@ export abstract class Pessoa implements IPessoa {
 
   constructor(nome: string, email: string) {
     this.Nome = nome;
-    this._email = email;
+    this.Email = email;
   }
 
   //getters
@@ -35,6 +35,10 @@ export abstract class Pessoa implements IPessoa {
       throw new Error(`Nome deve ter ao menos 3 carácteres`);
     }
 
+    if(!isNaN(Number(value))) {
+      throw new Error("Nome só pode ter caractéres alfabéticos.");
+    }
+
     if (value.trim().length > 100) {
       throw new Error("Nome deve ter no máximo 100 caracteres.");
     }
@@ -42,7 +46,7 @@ export abstract class Pessoa implements IPessoa {
 
   private _validarEmail(value: string): void {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
-    if (!value || regex.test(value) == false) {
+    if (!value || !regex.test(value.toLowerCase().trim())) {
       throw new Error("E-mail inválido.");
     }
 

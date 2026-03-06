@@ -4,7 +4,7 @@ export class Aluno extends Pessoa {
   private _id?: number;
   private _matricula: string = "";
   private _curso: string = "";
-  private _mediaFinal?: number;
+  private _mediaFinal: number = 0;
 
   constructor(
     nome: string,
@@ -34,7 +34,7 @@ export class Aluno extends Pessoa {
     return this._curso;
   }
 
-  public get MediaFinal(): number | undefined {
+  public get MediaFinal(): number {
     return this._mediaFinal;
   }
 
