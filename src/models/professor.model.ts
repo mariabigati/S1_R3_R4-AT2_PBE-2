@@ -86,12 +86,12 @@ export class Professor extends Pessoa {
   }
 
   private _validarCargaHr(value: number): void {
-    if (!value || isNaN(value)) {
+    if (value == null || value == undefined || isNaN(value)) {
       throw new Error("A carga horária deve ser um número.");
     }
 
-    if (value < 0) {
-      throw new Error("A carga horária não pode ser negativa!");
+    if (value <= 0) {
+      throw new Error("A carga horária não pode ser negativa ou nula!");
     }
   }
 }
